@@ -1,21 +1,54 @@
 .home {
   .content-section {
-    margin: 0;
+    margin: 0 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
+    @media @mobile {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .busIMG {
+      padding-bottom: 2rem;
+    }
+
+    div.welcomeContent {
+      border-bottom: dashed 2px @silver;
+
+      p.firstPara {
+        padding-bottom: 2rem;
+      }
+    }
+
     .text-content {
       width: 48%;
       padding-right: 1%;
+      padding-top: 2rem;
+
+      @media @mobile {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
     }
 
     .img-content {
       width: 48%;
       padding-left: 1%;
+      padding-top: 2rem;
+
+      @media @mobile {
+        width: 100%;
+      }
 
       img {
         border-radius: 10px;
+
+        @media @mobile {
+          width: 100%;
+        }
       }
     }
   }
@@ -23,6 +56,11 @@
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+
+    @media @mobile {
+      display: flex;
+      flex-direction: column-reverse;
+    }
 
     .text-content {
       padding-left: 1%;
@@ -38,9 +76,18 @@
   .content-destination {
     width: 75%;
     margin: 0 auto 30px;
+    padding-top: 2rem;
+
+    @media @mobile {
+      width: 100%;
+    }
 
     img {
       border-radius: 10px;
+
+      @media @mobile {
+        width: 100%;
+      }
     }
   }
 
@@ -50,9 +97,33 @@
     display: flex;
     justify-content: space-between;
 
+    @media @mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .destination {
       width: 30%;
       margin-bottom: 30px;
+
+      @media @mobile {
+        width: 80%;
+      }
+
+      .btn {
+        .buttoncolors(white,@eastern-blue);
+        .buttonsizes(80%,1rem,1.3rem);
+
+        @media @mobile {
+          margin: 0 auto;
+          width: 100%;
+        }
+      }
     }
+  }
+  @media @mobile {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 } // home
